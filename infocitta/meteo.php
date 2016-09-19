@@ -1,6 +1,6 @@
 <?php
   include 'token.php';
-  $meteo = file_get_contents("http://api.wunderground.com/api/".$tokenwg."/conditions/lang:IT/q/Italy/".$_SERVER['city'].".json");
+  $meteo = file_get_contents("http://api.wunderground.com/api/".$tokenwg."/conditions/lang:IT/q/Italy/".$_GET['city'].".json");
   $json = json_decode($meteo, true);
   $condizione = $json['current_observation']['weather'];
   $temp= $json['current_observation']['temp_c'];
